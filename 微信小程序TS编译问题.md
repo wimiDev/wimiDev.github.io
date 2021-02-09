@@ -10,7 +10,9 @@
 
 ## 附件
 我在新建项目的时候用的就是TS的模板，所以相关的依赖都是全的，如果你的不是，那这里并不能解决你的疑惑。
+
 * package.json
+
 ```json
     {
   "name": "miniprogram-ts-quickstart",
@@ -33,6 +35,7 @@
 ```
 
 * tsconfig.json
+
 ```json
 {
   "compilerOptions": {
@@ -66,8 +69,8 @@
     "node_modules"
   ]
 }
-
 ```
+
 * project.config.json(appid已经隐藏)
 ```json
     {
