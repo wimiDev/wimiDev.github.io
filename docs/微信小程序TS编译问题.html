@@ -1,0 +1,399 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>微信小程序TS编译问题 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="游戏客户端热更新方案.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="我所理解的内存管理.html">
+            
+                <a href="我所理解的内存管理.html">
+            
+                    
+                    我所理解的内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="CocosCreator-VideoPlayer.html">
+            
+                <a href="CocosCreator-VideoPlayer.html">
+            
+                    
+                    VideoPlayer爬坑记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="游戏客户端热更新方案.html">
+            
+                <a href="游戏客户端热更新方案.html">
+            
+                    
+                    游戏客户端热更新方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="微信小程序TS编译问题.html">
+            
+                <a href="微信小程序TS编译问题.html">
+            
+                    
+                    微信小程序TS编译问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >微信小程序TS编译问题</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x95EE;&#x9898;&#x63CF;&#x8FF0;">&#x95EE;&#x9898;&#x63CF;&#x8FF0;</h2>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x6211;&#x5728;&#x65B0;&#x5EFA;&#x9879;&#x76EE;&#x7684;&#x65F6;&#x5019;&#x7528;&#x7684;&#x5C31;&#x662F;TS&#x7684;&#x6A21;&#x677F;&#xFF0C;&#x6240;&#x4EE5;&#x76F8;&#x5173;&#x7684;&#x4F9D;&#x8D56;&#x90FD;&#x662F;&#x5168;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x7684;&#x4E0D;&#x662F;&#xFF0C;&#x90A3;&#x8FD9;&#x91CC;&#x5E76;&#x4E0D;&#x80FD;&#x89E3;&#x51B3;&#x4F60;&#x7684;&#x7591;&#x60D1;&#x3002;</p>
+<p>&#x5728;&#x5FAE;&#x4FE1;&#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;(<strong>&#x7248;&#x672C;&#xFF1A;1.0</strong>)&#x5F00;&#x53D1;&#x5C0F;&#x7A0B;&#x5E8F;&#x7684;&#x65F6;&#x5019;&#x9047;&#x5230;&#x4FEE;&#x6539;&#x4E86;&#x4EE3;&#x7801;&#xFF0C;&#x4F46;&#x662F;&#x89C6;&#x56FE;&#x6CA1;&#x5237;&#x65B0;&#x3002;&#x6211;&#x7684;&#x9879;&#x76EE;&#x653E;&#x5728;&#x4E86;git&#x4E0A;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x8BBE;&#x5907;&#x5F00;&#x53D1;&#x3002;&#x5728;&#x9879;&#x76EE;&#x521B;&#x5EFA;&#x7684;&#x8BBE;&#x5907;&#x4E0A;&#xFF0C;&#x7F16;&#x8BD1;&#x662F;&#x6B63;&#x5E38;&#x7684;&#xFF0C;TS&#xFF08;typescript&#xFF09;&#x80FD;&#x6B63;&#x5E38;&#x7684;&#x7F16;&#x8BD1;&#x6210;JS&#x3002;&#x4F46;&#x662F;&#x6211;&#x6362;&#x4E86;&#x4E00;&#x53F0;&#x8BBE;&#x5907;&#xFF0C;clone&#x9879;&#x76EE;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;&#x5FAE;&#x4FE1;&#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x7684;&#x5BFC;&#x5165;&#x529F;&#x80FD;&#x6765;&#x5BFC;&#x5165;&#x5DE5;&#x7A0B;&#x3002;&#x5F00;&#x53D1;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x53D1;&#x73B0;&#x4E86;&#x4E00;&#x4E9B;&#x8BE1;&#x5F02;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x4FEE;&#x6539;&#x4E86;&#x4E00;&#x4E9B;TS&#x6587;&#x4EF6;&#xFF0C;&#x4F46;&#x662F;&#x89C6;&#x56FE;&#x5E76;&#x6CA1;&#x6709;&#x8DDF;&#x7740;&#x6539;&#xFF0C;&#x6211;&#x8D77;&#x521D;&#x4EE5;&#x4E3A;&#x662F;&#x7F13;&#x5B58;&#x6CA1;&#x5237;&#x65B0;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5C1D;&#x8BD5;&#x8FC7;&#x6E05;&#x7F16;&#x8BD1;&#x7F13;&#x5B58;&#xFF0C;&#x6E05;&#x7406;&#x6240;&#x6709;&#x7F13;&#x5B58;&#xFF0C;&#x518D;&#x7F16;&#x8BD1;&#x3002;&#x4F46;&#x662F;&#x8FD8;&#x662F;&#x6CA1;&#x8D77;&#x4F5C;&#x7528;&#x3002;&#x540E;&#x6765;&#x5E72;&#x8106;&#x91CD;&#x542F;&#x5FAE;&#x4FE1;&#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#xFF0C;&#x4F46;&#x662F;&#x4E5F;&#x6CA1;&#x6709;&#x7528;&#x3002;
+&#x5728;&#x6211;&#x5FEB;&#x7206;&#x70B8;&#x7684;&#x524D;&#x5915;&#xFF0C;&#x770B;&#x4E86;&#x4E00;&#x773C;js&#x6587;&#x4EF6;&#xFF0C;&#x624D;&#x53D1;&#x73B0;&#x662F;TS&#x5E76;&#x6CA1;&#x6709;&#x7F16;&#x8BD1;&#x6210;JS&#x3002;</p>
+<h2 id="&#x6211;&#x5C1D;&#x8BD5;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;">&#x6211;&#x5C1D;&#x8BD5;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;</h2>
+<p>&#x6211;&#x4E5F;&#x7FFB;&#x4E86;&#x5F88;&#x591A;&#x5E16;&#x5B50;&#xFF0C;&#x8BF4;&#x662F;&#x8981;&#x52A0;&#x4E00;&#x5806;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;&#x6211;&#x6328;&#x4E2A;&#x68C0;&#x67E5;&#x4E4B;&#x540E;&#x53D1;&#x73B0;&#x8FD9;&#x4E9B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6211;&#x90FD;&#x6709;&#xFF0C;&#x914D;&#x7F6E;&#x4E5F;&#x6B63;&#x786E;&#xFF08;&#x540E;&#x9762;&#x4F1A;&#x9644;&#x4E0A;&#x8FD9;&#x4E9B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x53CA;&#x8BF4;&#x660E;&#xFF09;&#xFF0C;&#x4E00;&#x76F4;&#x8D70;&#x5230;&#x6700;&#x540E;&#x4E00;&#x6B65;&#xFF0C;&#x53D1;&#x73B0;&#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7F16;&#x8BD1;&#x6CA1;&#x6709;&#x6253;&#x5F00;&#x3002;TS&#xFF08;typescript&#xFF09;&#x7684;&#x662F;&#x9700;&#x8981;&#x8D70;&#x81EA;&#x5B9A;&#x4E49;&#x7F16;&#x8BD1;&#x6D41;&#x7A0B;&#xFF0C;&#x624D;&#x80FD;&#x7F16;&#x8BD1;&#x6210;JS&#x3002;&#x5177;&#x4F53;&#x7684;&#x64CD;&#x4F5C;&#x662F;&#xFF1A;&#x5FAE;&#x4FE1;&#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x53F3;&#x4E0A;&#x89D2;&#x7684;&#x201C;&#x8BE6;&#x60C5;&#x201D;-&gt;&#x201C;&#x672C;&#x5730;&#x8BBE;&#x7F6E;&#x201D;-&gt;&#x201C;&#x9879;&#x76EE;&#x8BBE;&#x7F6E;&#x201D;-&gt;&#x5F80;&#x4E0B;&#x6ED1;&#xFF0C;&#x76F4;&#x5230;&quot;&#x542F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x5904;&#x7406;&#x547D;&#x4EE4;&quot;-&gt;&#x6253;&#x94A9;-&gt;&#x5E76;&#x5728;&#x7F16;&#x8BD1;/&#x9884;&#x89C8;/&#x4E0A;&#x4F20;&#x524D;&#x9884;&#x5904;&#x7406;&#xFF0C;&#x8FD9;&#x4E2A;&#x6846;&#x586B;&#x5165;npm run tsc&#x3002;
+&#x7136;&#x540E;&#x6E05;&#x7406;&#x7F16;&#x8BD1;&#x7F13;&#x5B58;&#xFF0C;&#x518D;&#x70B9;&#x4E00;&#x4E0B;&#x7F16;&#x8BD1;&#x3002;&#x6211;&#x8FD9;&#x91CC;&#x51FA;&#x73B0;&#x4E86;&#x4E2A;&#x62A5;&#x9519;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x5FD8;&#x8BB0;&#x622A;&#x4E0B;&#x6765;&#x4E86;&#xFF0C;&#x5927;&#x6982;&#x7684;&#x610F;&#x601D;&#x662F;&#x6211;&#x7684;&#x67D0;&#x4E2A;node_modules&#x6CA1;&#x6709;&#x5B89;&#x88C5;&#xFF0C;&#x540E;&#x6765;&#x770B;&#x4E86;&#x4E00;&#x4E0B;&#x662F;&#x5FD8;&#x8BB0;&#x6267;&#x884C; npm i &#x4E86;&#x3002;</p>
+<h2 id="&#x9644;&#x4EF6;">&#x9644;&#x4EF6;</h2>
+<p>&#x6211;&#x5728;&#x65B0;&#x5EFA;&#x9879;&#x76EE;&#x7684;&#x65F6;&#x5019;&#x7528;&#x7684;&#x5C31;&#x662F;TS&#x7684;&#x6A21;&#x677F;&#xFF0C;&#x6240;&#x4EE5;&#x76F8;&#x5173;&#x7684;&#x4F9D;&#x8D56;&#x90FD;&#x662F;&#x5168;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x7684;&#x4E0D;&#x662F;&#xFF0C;&#x90A3;&#x8FD9;&#x91CC;&#x5E76;&#x4E0D;&#x80FD;&#x89E3;&#x51B3;&#x4F60;&#x7684;&#x7591;&#x60D1;&#x3002;</p>
+<ul>
+<li>package.json
+```json
+  {
+&quot;name&quot;: &quot;miniprogram-ts-quickstart&quot;,
+&quot;version&quot;: &quot;1.0.0&quot;,
+&quot;description&quot;: &quot;&quot;,
+&quot;scripts&quot;: {
+  &quot;compile&quot;: &quot;./node_modules/typescript/bin/tsc&quot;,
+  &quot;tsc&quot;: &quot;node ./node_modules/typescript/lib/tsc.js&quot;
+},
+&quot;keywords&quot;: [],
+&quot;author&quot;: &quot;&quot;,
+&quot;license&quot;: &quot;&quot;,
+&quot;dependencies&quot;: {},
+&quot;devDependencies&quot;: {
+  &quot;miniprogram-api-typings&quot;: &quot;^2.8.3-1&quot;,
+  &quot;typescript&quot;: &quot;^3.3.3333&quot;
+}
+}</li>
+</ul>
+<pre><code>
+* tsconfig.json
+```json
+{
+  &quot;compilerOptions&quot;: {
+    &quot;strictNullChecks&quot;: true,
+    &quot;noImplicitAny&quot;: true,
+    &quot;module&quot;: &quot;CommonJS&quot;,
+    &quot;target&quot;: &quot;ES5&quot;,
+    &quot;allowJs&quot;: false,
+    &quot;experimentalDecorators&quot;: true,
+    &quot;noImplicitThis&quot;: true,
+    &quot;noImplicitReturns&quot;: true,
+    &quot;alwaysStrict&quot;: true,
+    &quot;inlineSourceMap&quot;: true,
+    &quot;inlineSources&quot;: true,
+    &quot;noFallthroughCasesInSwitch&quot;: true,
+    &quot;noUnusedLocals&quot;: true,
+    &quot;noUnusedParameters&quot;: true,
+    &quot;strict&quot;: true,
+    &quot;removeComments&quot;: true,
+    &quot;pretty&quot;: true,
+    &quot;strictPropertyInitialization&quot;: true,
+    &quot;lib&quot;: [&quot;es5&quot;],
+    &quot;typeRoots&quot;: [
+      &quot;./typings&quot;
+    ]
+  },
+  &quot;include&quot;: [
+    &quot;./**/*.ts&quot;
+  ],
+  &quot;exclude&quot;: [
+    &quot;node_modules&quot;
+  ]
+}
+</code></pre><ul>
+<li>project.config.json(appid&#x5DF2;&#x7ECF;&#x9690;&#x85CF;)<pre><code class="lang-json">  {
+<span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;&#x9879;&#x76EE;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&quot;</span>,
+<span class="hljs-string">&quot;packOptions&quot;</span>: {
+  <span class="hljs-string">&quot;ignore&quot;</span>: []
+},
+<span class="hljs-string">&quot;miniprogramRoot&quot;</span>: <span class="hljs-string">&quot;miniprogram/&quot;</span>,
+<span class="hljs-string">&quot;compileType&quot;</span>: <span class="hljs-string">&quot;miniprogram&quot;</span>,
+<span class="hljs-string">&quot;libVersion&quot;</span>: <span class="hljs-string">&quot;2.8.2&quot;</span>,
+<span class="hljs-string">&quot;projectname&quot;</span>: <span class="hljs-string">&quot;wechat-hello&quot;</span>,
+<span class="hljs-string">&quot;scripts&quot;</span>: {
+  <span class="hljs-string">&quot;beforeCompile&quot;</span>: <span class="hljs-string">&quot;npm run tsc&quot;</span>,
+  <span class="hljs-string">&quot;beforePreview&quot;</span>: <span class="hljs-string">&quot;npm run tsc&quot;</span>,
+  <span class="hljs-string">&quot;beforeUpload&quot;</span>: <span class="hljs-string">&quot;npm run tsc&quot;</span>
+},
+<span class="hljs-string">&quot;setting&quot;</span>: {
+  <span class="hljs-string">&quot;urlCheck&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;es6&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;enhance&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">&quot;postcss&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;preloadBackgroundData&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">&quot;minified&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;newFeature&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">&quot;coverView&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;nodeModules&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">&quot;autoAudits&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">&quot;showShadowRootInWxmlPanel&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;scopeDataCheck&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">&quot;uglifyFileName&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">&quot;checkInvalidKey&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;checkSiteMap&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;uploadWithSourceMap&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;compileHotReLoad&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">&quot;useMultiFrameRuntime&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;useApiHook&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;useApiHostProcess&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">&quot;babelSetting&quot;</span>: {
+    <span class="hljs-string">&quot;ignore&quot;</span>: [],
+    <span class="hljs-string">&quot;disablePlugins&quot;</span>: [],
+    <span class="hljs-string">&quot;outputPath&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+  },
+  <span class="hljs-string">&quot;enableEngineNative&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">&quot;bundle&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">&quot;useIsolateContext&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;useCompilerModule&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;userConfirmedUseCompilerModuleSwitch&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">&quot;userConfirmedBundleSwitch&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">&quot;packNpmManually&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">&quot;packNpmRelationList&quot;</span>: [],
+  <span class="hljs-string">&quot;minifyWXSS&quot;</span>: <span class="hljs-literal">true</span>
+},
+<span class="hljs-string">&quot;simulatorType&quot;</span>: <span class="hljs-string">&quot;wechat&quot;</span>,
+<span class="hljs-string">&quot;simulatorPluginLibVersion&quot;</span>: {},
+<span class="hljs-string">&quot;appid&quot;</span>: <span class="hljs-string">&quot;******&quot;</span>,
+<span class="hljs-string">&quot;condition&quot;</span>: {}
+}
+</code></pre>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="游戏客户端热更新方案.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 游戏客户端热更新方案">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"微信小程序TS编译问题","level":"1.5","depth":1,"previous":{"title":"游戏客户端热更新方案","level":"1.4","depth":1,"path":"游戏客户端热更新方案.md","ref":"游戏客户端热更新方案.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"微信小程序TS编译问题.md","mtime":"2021-02-09T14:24:09.156Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-09T14:26:40.628Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
