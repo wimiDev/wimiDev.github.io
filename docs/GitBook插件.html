@@ -1,0 +1,329 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>GitBook插件 · 格局.</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="LuoSu">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="微信小程序TS编译问题.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="我所理解的内存管理.html">
+            
+                <a href="我所理解的内存管理.html">
+            
+                    
+                    我所理解的内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="CocosCreator-VideoPlayer.html">
+            
+                <a href="CocosCreator-VideoPlayer.html">
+            
+                    
+                    VideoPlayer爬坑记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="游戏客户端热更新方案.html">
+            
+                <a href="游戏客户端热更新方案.html">
+            
+                    
+                    游戏客户端热更新方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="微信小程序TS编译问题.html">
+            
+                <a href="微信小程序TS编译问题.html">
+            
+                    
+                    微信小程序TS编译问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="GitBook插件.html">
+            
+                <a href="GitBook插件.html">
+            
+                    
+                    GitBook插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >GitBook插件</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x7ED9;gitbook&#x6DFB;&#x52A0;&#x81EA;&#x5DF1;&#x559C;&#x6B22;&#x7684;&#x63D2;&#x4EF6;">&#x7ED9;GitBook&#x6DFB;&#x52A0;&#x81EA;&#x5DF1;&#x559C;&#x6B22;&#x7684;&#x63D2;&#x4EF6;</h2>
+<p>GitBook&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6DFB;&#x52A0;&#x63D2;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x4E30;&#x5BCC;&#x6587;&#x6863;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x6DFB;&#x52A0;&#x63D2;&#x4EF6;&#x7684;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<ul>
+<li>&#x5728;&#x6587;&#x6863;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;<strong>book.json</strong>&#x6587;&#x4EF6;&#x3002;</li>
+<li>&#x5728;book.json&#x7684;&#x6839;&#x7ED3;&#x6784;&#x4E0A;&#x52A0;&#x4E0A;<strong>plugins</strong>&#x5C5E;&#x6027;(&#x7965;&#x89C1;&#x5206;&#x4EAB;&#x63D2;&#x4EF6;)</li>
+<li><strong>gitbook install ./</strong> &#x5B89;&#x88C5;&#x63D2;&#x4EF6;</li>
+</ul>
+<h2 id="&#x6DFB;&#x52A0;&#x5206;&#x4EAB;&#x63D2;&#x4EF6;">&#x6DFB;&#x52A0;&#x5206;&#x4EAB;&#x63D2;&#x4EF6;</h2>
+<p>&#x5206;&#x4EAB;&#x63D2;&#x4EF6;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;.</p>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;&#x683C;&#x5C40;.&quot;</span>,
+    <span class="hljs-string">&quot;author&quot;</span>: <span class="hljs-string">&quot;LuoSu&quot;</span>,
+    <span class="hljs-string">&quot;plugins&quot;</span>: [<span class="hljs-string">&quot;-sharing&quot;</span>, <span class="hljs-string">&quot;sharing-plus&quot;</span>],
+    <span class="hljs-string">&quot;pluginsConfig&quot;</span>: {
+        <span class="hljs-string">&quot;sharing&quot;</span>: {
+            <span class="hljs-string">&quot;douban&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;facebook&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;google&quot;</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-string">&quot;hatenaBookmark&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;instapaper&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;line&quot;</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-string">&quot;linkedin&quot;</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-string">&quot;messenger&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;pocket&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;qq&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;qzone&quot;</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-string">&quot;stumbleupon&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;twitter&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;viber&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;vk&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;weibo&quot;</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-string">&quot;whatsapp&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;all&quot;</span>: [
+                <span class="hljs-string">&quot;facebook&quot;</span>, <span class="hljs-string">&quot;google&quot;</span>, <span class="hljs-string">&quot;twitter&quot;</span>,
+                <span class="hljs-string">&quot;weibo&quot;</span>, <span class="hljs-string">&quot;instapaper&quot;</span>, <span class="hljs-string">&quot;linkedin&quot;</span>,
+                <span class="hljs-string">&quot;pocket&quot;</span>, <span class="hljs-string">&quot;stumbleupon&quot;</span>
+            ]
+        }
+    }
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="微信小程序TS编译问题.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 微信小程序TS编译问题">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"GitBook插件","level":"1.6","depth":1,"previous":{"title":"微信小程序TS编译问题","level":"1.5","depth":1,"path":"微信小程序TS编译问题.md","ref":"微信小程序TS编译问题.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","sharing-plus"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":true,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":true},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"LuoSu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"格局.","gitbook":"*"},"file":{"path":"GitBook插件.md","mtime":"2021-02-14T10:03:04.511Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-14T10:03:17.129Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
